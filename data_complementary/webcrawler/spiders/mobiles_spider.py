@@ -1,6 +1,6 @@
 import scrapy
 import json
-from tutorial.utils.helper import *
+from webcrawler.utils.helper import *
 
 ##This spider is for Ebay mobile only.
 class MobilesSpider(scrapy.Spider):
@@ -11,8 +11,8 @@ class MobilesSpider(scrapy.Spider):
     
     def start_requests(self):
         urls = [
-            #'https://www.ebay.com/itm/Excellent-Samsung-Galaxy-S8-Plus-G955U-64-GB-Orchid-Gray-Verizon-GSM-Unlocked-/163407137164?hash=item260bd3098c',
-            'file:///D:/Code/Python/ndsc2019/html/ebay/mobile/specs1.html'
+            'https://www.ebay.com/itm/Excellent-Samsung-Galaxy-S8-Plus-G955U-64-GB-Orchid-Gray-Verizon-GSM-Unlocked-/163407137164?hash=item260bd3098c',
+            # 'file:///D:/Code/Python/ndsc2019/html/ebay/mobile/specs1.html'
         ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)

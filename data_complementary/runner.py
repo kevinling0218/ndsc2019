@@ -2,8 +2,9 @@ from scrapy.cmdline import execute
 
 
 SPIDER_NAME = "mobiles"
-##C://Work/sourceCodeTest/ndsc2019/ndsc2019/tutorial/tutorial/spiders/
-ROOT = "D://Code/Python/ndsc2019/tutorial/tutorial/spiders/"
+##C://Work/sourceCodeTest/ndsc2019/ndsc2019/data_complementary/webcrawler/spiders/
+##D://Code/Python/ndsc2019/data_complementary/webcrawler/spiders/
+ROOT = "C://Work/sourceCodeTest/ndsc2019/teamCode/ndsc2019/data_complementary/webcrawler/spiders/"
 
 try:
     # execute(

@@ -36,7 +36,7 @@ class HTMLGenerator:
     #Folder naming convention is number_modelName
     def __init__(self):
         self.rootPath = os.path.abspath(os.curdir)
-        self.folderPath = os.path.join(self.rootPath,"ebay","mobile")
+        self.folderPath = os.path.join(self.rootPath,"html","ebay","mobile")
         return
     
     def test1(self):
