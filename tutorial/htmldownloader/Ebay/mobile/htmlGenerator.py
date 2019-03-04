@@ -1,9 +1,13 @@
 import os
 import json
-import urllib.request
+import urllib
+import requests
 import urllib.parse as urlparse
 from urllib.parse import urlencode
 from pprint import pprint
+from scrapy.selector import Selector
+from bs4 import BeautifulSoup as bs
+
 class keywordReader:
 
     #class Attribute
@@ -15,7 +19,7 @@ class keywordReader:
      # Initializer / Instance Attributes
     def __init__(self):
         self.rootPath = os.path.abspath(os.curdir)
-        self.filePath = os.path.join(self.rootPath,"dataset","mobile_profile_train.json")
+        self.filePath = os.path.join(self.rootPath,"data","mobile_profile_train.json")
 
     
     def readMobileModelDic(self):
@@ -28,6 +32,7 @@ class keywordReader:
 class HTMLGenerator:
 
     htmlRoot = "https://www.ebay.com/sch/i.html"#?_nkw=
+    itemListURLXpathSchema = "//*[@id='mainContent' and contains(@class,'srp-main-content')]//ul[contains(@class,'srp-results')]//li[contains(@class,'s-item')]//a[contains(@class,'s-item__link')]/@href"
     #Folder naming convention is number_modelName
     def __init__(self):
         self.rootPath = os.path.abspath(os.curdir)
@@ -51,10 +56,27 @@ class HTMLGenerator:
             f = opener.open(url)
             content = f.read()
             f.close()
-            ff = open("resultHTML.html","w+")
-            ff.write(str(content, 'utf-8'))
-            ff.close()
-            break
+            #ul[contains(@class,'srp-results')]
+            #li[contains(@class,'s-item__link')]
+            #items.xpath("//*[@id='mainContent' and contains(@class,'srp-main-content')]//ul[contains(@class,'srp-results')]//li[contains(@class,'s-item')]//a[contains(@class,'s-item__link')]/@href")
+            #https://www.ebay.com/itm/Samsung-Samsung-gear-S2-smartwatch-sports-black/123163937956?hash=item1cad248ca4:g:2jwAAOSw9mFbD7VD
+            items = Selector(text=str(content,'utf-8')).xpath("//*[@id='mainContent' and contains(@class,'srp-main-content')]//ul[contains(@class,'srp-results')]//li[contains(@class,'s-item')]")
+            top10Counter = 10
+            for idx, item in enumerate (items):
+                if top10Counter <= 0:
+                    break
+                currHref = item.xpath(".//a[@class='s-item__link']/@href").get()
+                newFilePath = os.path.join(newFolderPath,f"{currFolderName}_{str(idx + 1)}.html")
+                if not currHref:
+                    break
+                ff = requests.get(currHref)
+                currContent = ff.text
+                fileWriter = open(newFilePath,"w+",encoding="utf-8")
+                soup = bs(currContent)      
+                prettyHTML = soup.prettify()
+                fileWriter.write(prettyHTML)
+                fileWriter.close()
+                top10Counter-=1
         return
     
     def updateURLParams(self,paramsDic):
