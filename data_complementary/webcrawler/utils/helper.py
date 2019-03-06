@@ -10,9 +10,17 @@ def getEnglishSentenseOnly(theText):
     turn1 = re.sub("<.*?>", "", theText)
     turn2 = re.sub("[^a-zA-Z0-9 +]", "", turn1.strip())
     return turn2
-# def add(value1, value2):
-#     return value1 + value2
 
-# result = add(3, 5)
-# print(result)
+
+def getFirstNumberOnly(theText):
+    if not theText:
+        return
+    suspectNumber = 0
+    potentialNumbers = list(filter(str.isdigit, theText))
+    if (len(potentialNumbers) > 0):
+        suspectNumber = int(potentialNumbers[0])
+    return suspectNumber
+
+
+
 

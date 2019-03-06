@@ -8,6 +8,6 @@
     "Storage Capacity":"",
     "Color Family":"",
     "Phone Model": "iphone 6s plus",
-    "Camera":"12.0MP",
+    "Camera": ["12.0MP"],
     "Phone Screen Size":"4 in"
 }
