@@ -1,15 +1,17 @@
 import os
 import json
+import itertools
 from webcrawler.utils.helper import *
 
 class Json2Csv:
     #Attributes
     currProjectFolderPath = os.path.abspath(os.curdir)
     jsonRootFolder = os.path.join(currProjectFolderPath,"data_complementary","json2csv","json")
-    trainJsonFile = os.path(currProjectFolderPath,"data","mobile_profile_train.json")
+    trainJsonFile = os.path.join(currProjectFolderPath,"data","mobile_profile_train.json")
     targetModelId = -1
     trainJsonData = {}
     targetModelData = {}
+    result = []
 
     def __init__(self, modelId):
         self.targetModelId = modelId
@@ -18,77 +20,85 @@ class Json2Csv:
             self.targetModelData = json.load(f)
         with open(self.trainJsonFile) as f:
             self.trainJsonData = json.load(f)
+
+        self.generateResultArray()
         return
+
+    def generateResultArray(self):
+
+        osStrs = self.OSPipe()
+        networkStrs = self.NetworkConnectionPipe()
+        ramStrs = self.RAMPipe()
+        brandStrs = self.BrandPipe()
+        warrantyStrs = self.WarrantyPipe()
+        storageCapcities = self.storageCapcityPipe()
+        colorFamilies = self.colorFamilyPipe()
+        cameras = self.cameraPipe()
+        phoneScreens = self.phoneScreenPipe()
+        
+        iterables = [osStrs,networkStrs, ramStrs,brandStrs,warrantyStrs,storageCapcities,colorFamilies,cameras,phoneScreens]
+        for iterarray in iterables:
+            fillNAArray(iterarray)
+        resultArray = list(itertools.product(*iterables))
+
+        return resultArray
     
     #OS string pipe
     def OSPipe(self):
-        osStr = self.targetModelData["Operating System"]
+        KEY = "Operating System"
+        res = []
+        osStr = self.targetModelData[KEY]
         if not osStr:
-            return ""
-        lowerOSStr = osStr.lower().replace(" ", "")
-        #Is IOS
-        iosPotential = ["ios","apple"]
-        if any(word in lowerOSStr for word in iosPotential):
-            return 1
-        #Is Android
-        androidPotential = ["android","google"]
-        if any(word in lowerOSStr for word in androidPotential):
-            return 6
-        #Is symbian
-        symbianPotential = ["symbian"]
-        if any(word in lowerOSStr for word in symbianPotential):
-            return 2
-        #Is windows
-        windowsPotential = ["windows", "microsoft"]
-        if any(word in lowerOSStr for word in windowsPotential):
-            return 3
-        #Is blackberry os
-        blackBerryPotential = ["black", "berry", "blackberry"]
-        if any(word in lowerOSStr for word in blackBerryPotential):
-            return 5
-        #Is samsung os
-        samsungOsPotential = ["tizen", "linux", "samsung"]
-        if any(word in lowerOSStr for word in samsungOsPotential):
-            return 4
-        #Is nokia os
-        nokiaPotential = ["nokia","asha"]
-        if any(word in lowerOSStr for word in nokiaPotential):
-            return 0
-        return ""
+            return res
         
+        lowerOS = osStr.lower().replace(" ","")
+        trainOSObj = self.trainJsonData[KEY]
+        potentialObj ={
+            "ios": ["ios","apple"],
+            "android": ["android","google"],
+            "symbian": ["symbian"],
+            "windows": ["windows", "microsoft"],
+            "blackberry os": ["black", "berry", "blackberry"],
+            "samsung os":["tizen", "linux", "samsung"],
+            "nokia os":["nokia","asha"]
+        }
+        for k,v in trainOSObj.items():
+            if any(word in lowerOS for word in potentialObj[k]):
+                res.append(v)
+
+        return res
         
     #NetworkConnectionPipe
     def NetworkConnectionPipe(self):
-        networkConnection = self.targetModelData["Network Connections"]
+        KEY = "Network Connections"
+        res = []
+        networkConnection = self.targetModelData[KEY]
         if not networkConnection:
-            return ""
+            return res
         lowerNC = networkConnection.lower().replace(" ", "")
-        #4g
-        potential4G = ["4g","lte","four","forth"] 
-        if any(word in lowerNC for word in potential4G):
-            return 0
-        #2g
-        potential2G = ["2g", "gsm","two", "second"]
-        if any(word in lowerNC for word in potential2G):
-            return 1
-        #3g
-        potential3G = ["3g","three","third"]
-        if any(word in lowerNC for word in potential3G):
-            return 2
-        #3.5g
-        potential3dot5G = ["3.5g"]
-        if any(word in lowerNC for word in potential3dot5G):
-            return 3
+        trainNCObj = self.trainJsonData[KEY]
+        potentialObj = {
+            "4g" : ["4g","lte","four","forth"],
+            "2g" : ["2g", "gsm","two", "second"],
+            "3g" : ["3g","three","third"],
+            "3.5g" : ["3.5g"]
+        }
+        for k,v in trainNCObj.items():
+            if any(word in lowerNC for word in potentialObj[k]):
+                res.append(v)
 
-        return ""
+        return res
 
     #Memory RAM
     def RAMPipe(self):
-        ram = self.targetModelData["Memory RAM"]
+
+        KEY = "Memory RAM"
+        res = []
+        ram = self.targetModelData[KEY]
         if not ram:
-            return ""
+            return res
         lowerRAM = ram.lower().replace(" ", "")
-        trainRamObj = self.trainJsonData["Memory RAM"]
+        trainRamObj = self.trainJsonData[KEY]
         potentialObj ={
             "4gb": ["4g","4096","4000"],
             "2gb": ["2g", "2048", "2000"],
@@ -98,37 +108,43 @@ class Json2Csv:
             "8gb":["8g","8192","8000"],
             "3gb":["3g", "3072", "3000"],
             "10gb":["10g"],
-            "1g":["1g","1024","1000"],
+            "1gb":["1g","1024","1000"],
             "6gb": ["6g","6144"]
         }
         for k,v in trainRamObj.items():
             if any(word in lowerRAM for word in potentialObj[k]):
-                return v
+                res.append(v)
+        
+        return res
         
     
     #Brand
     def BrandPipe(self):
-        brand = self.targetModelData["Brand"]
+
+        KEY = "Brand"
+        res = []
+        brand = self.targetModelData[KEY]
         if not brand:
-            return ""
+            return res
         lowerBrand = brand.lower().replace(" ","")
-        trainBrandObj = self.trainJsonData["Brand"]
-        for k,v in trainBrandObj.item():
+        trainBrandObj = self.trainJsonData[KEY]
+        for k,v in trainBrandObj.items():
             if any(word in lowerBrand for word in k.split()):
-                return v
+                res.append(v)
+        return res
 
     #Warranty Period
     #1y 1m 1month 1 month 1year 1 year  
     def WarrantyPipe(self):
-        warranty = self.targetModelData["Warranty Period"]
+        KEY = "Warranty Period"
+        res = []
+        warranty = self.targetModelData[KEY]
         if not warranty:
-            return ""
+            return res
         suspectNumber = 0
         lowerWarranty = warranty.lower().replace(" ","")
-        trainWarrantyObj = self.trainJsonData["Warranty Period"]
-        potentialNumbers = list(filter(str.isdigit, lowerWarranty))
-        if (len(potentialNumbers) > 0):
-            suspectNumber = int(potentialNumbers[0])
+        trainWarrantyObj = self.trainJsonData[KEY]
+        suspectNumber = getFirstNumberOnly(lowerWarranty)
         
         resultKey = ""
         if "month" in lowerWarranty:
@@ -144,27 +160,66 @@ class Json2Csv:
             elif suspectNumber == 1:
                 resultKey = f"{suspectNumber} year"
             
-        if not resultKey:
-            return trainWarrantyObj[resultKey]
-        else:
-            return ""
+        if resultKey and resultKey in trainWarrantyObj:
+            return res.append(trainWarrantyObj[resultKey])
+
+        return res
     
     #Storage Capacity
     def storageCapcityPipe(self):
         KEY = "Storage Capacity"
-        storage = self.targetModelData[KEY]
-        if not storage:
-            return ""
-        lowerStorage = storage.lower().replace(" ","")
+        res = []
+        storageList = self.targetModelData[KEY]
+        if not storageList or len(storageList) == 0:
+            return res
+            
         trainStorageObj = self.trainJsonData[KEY]
-        #[:-1] means to remove the last character from the string
-        for k,v in trainStorageObj.item():
-            if any(k[:-1] in lowerStorage):
-                return v
+        for idx,val in enumerate(storageList):
+            lowerStorage = val.lower().replace(" ","")
+            lowerStorageNumberOnly = getFirstNumberOnly(lowerStorage)
+            isLowerStorageContainG = isContainStr(lowerStorage,'g')
+            isLowerStorageContainM = isContainStr(lowerStorage,'m')
+            #[:-1] means to remove the last character from the string
+            for k,v in trainStorageObj.items():
+                trainNumber = getFirstNumberOnly(k)
+                isTrainContainsG = isContainStr(k, 'g')
+                isTrainContainsM = isContainStr(k, 'm')
+                
+                #When current unit is G
+                if isLowerStorageContainG and isTrainContainsG:
+                    if lowerStorageNumberOnly == trainNumber:
+                        res.append(v)
+                
+                #When current unit is M
+                if isLowerStorageContainM and isTrainContainsM:
+                    if lowerStorageNumberOnly == trainNumber:
+                        res.append(v)
+
+        return res
+        
     
     #Color Family (skip)
-    def colorFamily(self):
-        return ""
+    def colorFamilyPipe(self):
+        res_set = set()
+        KEY = "Color Family"
+        colorList = self.targetModelData[KEY]
+        if not colorList or len(colorList) == 0:
+            return list(res_set)
+        
+        trainColorObj = self.trainJsonData[KEY]
+        for idx, val in enumerate(colorList):
+            lowColor = val.lower().replace(" ","")
+            for colorTexts in trainColorObj:
+                colorText = ""
+                colorTextsArr = colorTexts.split(" ")
+                if len(colorTextsArr) > 1:
+                    colorText = colorTextsArr[1]
+                else:
+                    colorText = colorTextsArr[0]
+                if colorText in lowColor:
+                    res_set.add(trainColorObj[colorTexts])
+        
+        return list(res_set)
     
     #Camera
     #Priority list = 
@@ -197,29 +252,29 @@ class Json2Csv:
     #Phone Screen Size
     def phoneScreenPipe(self):
         KEY = "Phone Screen Size"
+        res = []
         phoneScreen = self.targetModelData[KEY]
         if not phoneScreen:
-            return ""
+            return res
         lowerPhoneScreen = phoneScreen.lower().replace(" ","")
         suspectNumber = getFirstNumberOnly(lowerPhoneScreen)
         if suspectNumber <= 3.5:
-            return 4
+             res.append(4)
         elif suspectNumber > 3.5 and suspectNumber <= 4:
-            return 1
+             res.append(1)
         elif suspectNumber > 4 and suspectNumber <= 4.5:
-            return 3
+             res.append(3)
         elif suspectNumber > 4.5 and suspectNumber <= 5:
-            return 0
+             res.append(0)
         elif suspectNumber > 5 and suspectNumber < 5.5:
-            return 5
+             res.append(5)
         elif suspectNumber > 5.5 :
-            return 2
-      
+             res.append(2)
+        return res
         
             
-
-        
-
+# json2csv = Json2Csv(1208)
+# json
 
         
         

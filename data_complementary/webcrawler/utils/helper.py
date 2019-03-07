@@ -1,5 +1,6 @@
 import sys
 import re
+from decimal import Decimal
 
 def cleanText(theText):
     return ''.join(c for c in theText if c not in '\r\t\n').strip()
@@ -15,12 +16,26 @@ def getEnglishSentenseOnly(theText):
 def getFirstNumberOnly(theText):
     if not theText:
         return
-    suspectNumber = 0
-    potentialNumbers = list(filter(str.isdigit, theText))
-    if (len(potentialNumbers) > 0):
-        suspectNumber = int(potentialNumbers[0])
-    return suspectNumber
 
+    findRes = re.search(r'\d+\.*\d{1}', theText)
+    if findRes:
+        potentialNumber = findRes.group()
+        if potentialNumber:
+            return Decimal(potentialNumber)
+    
+    return 0
+
+def isContainStr(theText, str):
+    res = theText.find(str)
+    return True if res != -1 else False
+
+
+def fillNAArray(theArray):
+
+    if len(theArray) == 0:
+        theArray.append(-1)
+    
+    return
 
 
 
