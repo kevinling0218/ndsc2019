@@ -1,5 +1,7 @@
 *.pkl
 *.csv
-
-
+*.html
+.vscode
+*.pyc
+__pycache__
 

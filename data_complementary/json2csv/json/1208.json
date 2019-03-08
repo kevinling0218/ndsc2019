@@ -1,0 +1,13 @@
+{ 
+    "Operating System": "iOS - Apple",
+    "Features": "Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer",
+    "Network Connections": "4g",
+    "Memory RAM":"2 GB RAM",
+    "Brand":"Apple iPhone 6s",
+    "Warranty Period":"12 months",
+    "Storage Capacity":["16 GB","32 G", "64gb","XX128GB"],
+    "Color Family":["Space Gray", "Silver", "Gold", "Rose Gold"],
+    "Phone Model": "iphone 6s plus",
+    "Camera": ["12.0MP"],
+    "Phone Screen Size":"4.7 inches"
+}
