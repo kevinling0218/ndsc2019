@@ -8,6 +8,13 @@
 # cl = df_mobile_val["Phone Model"].dropna().unique().astype(int)
 
 # Generate HTML
-from htmldownloader.Ebay.mobile.htmlGenerator import HTMLGenerator
-htmlGen = HTMLGenerator()
-htmlGen.test1()
+# from htmldownloader.Ebay.mobile.htmlGenerator import HTMLGenerator
+# htmlGen = HTMLGenerator()
+# htmlGen.test1()
+
+
+
+# outPut final csv
+from json2csv.json2csv import *
+final = Json2Csv()
+final.outputFinalCSV()

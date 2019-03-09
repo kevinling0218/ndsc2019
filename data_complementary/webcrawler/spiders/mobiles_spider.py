@@ -1,8 +1,12 @@
 import scrapy
+from scrapy import signals
+from scrapy.xlib.pydispatch import dispatcher
 import json
 import os
 import re
+import operator
 from webcrawler.utils.helper import *
+from webcrawler.utils.pipe import*
 
 
 ##This spider is for Ebay mobile only.
@@ -11,7 +15,10 @@ class MobilesSpider(scrapy.Spider):
     trans_table = {ord(c): None for c in u'\r\n\t'}
     accLabels = ["Operating System","Features","Brand", "Warranty","Network Technology","Storage Capacity", 
     "Color","RAM","Camera Resolution","Screen Size"]
-
+    res = {}
+    rootPath = os.path.abspath(os.curdir)
+    destinationJsonFolder = os.path.join(rootPath,"data_complementary","json2csv","json3")
+    counter = 0 
     def HTMLFileURLGenerator(self, currentTargetHtmlFolder):
         
         urls = []
@@ -19,8 +26,39 @@ class MobilesSpider(scrapy.Spider):
             for filename in os.listdir(currentTargetHtmlFolder):
                 if (filename.endswith(".html")):
                     urls.append(os.path.join(currentTargetHtmlFolder,filename))
+                else:
+                    test2 = 1
+            if len(os.listdir(currentTargetHtmlFolder)) == 0:
+                test3 = 1
+        else:
+            test = 1 
         return urls
        
+    def __init__(self):
+         dispatcher.connect(self.engine_stopped, signals.engine_stopped)
+
+    def engine_stopped(self):
+        #print (self.res)
+        #make res dic into destintation json file
+        self.transformRes()
+        if not os.path.exists(self.destinationJsonFolder):
+            os.makedirs(self.destinationJsonFolder)
+        for k,v in self.res.items():
+            newFilePath = os.path.join(self.destinationJsonFolder,f"{str(k)}.json")
+            f = open(newFilePath,"w+")
+            f.write(json.dumps(v, indent=4, sort_keys=True))
+            f.close()
+
+    def transformRes(self):
+        tempRes = {}
+        for k,v in self.res.items():
+            tempRes[k] = {}
+            if isinstance(v,dict):
+                for key,value in v.items():
+                    highestKey = max(value.items(), key=operator.itemgetter(1))[0]
+                    tempRes[k][key] = highestKey
+        self.res = tempRes
+        
 
     def start_requests(self):
         # urls = [
@@ -28,9 +66,10 @@ class MobilesSpider(scrapy.Spider):
         #     # 'file:///D:/Code/Python/ndsc2019/html/ebay/mobile/specs1.html'
         # ]
         self.rootPath = os.path.abspath(os.curdir)
-        currModelIdRegex = r"^\d+_.*"
+        currModelIdRegex = r"^(\d+)_.*"
         self.htmlFolderPath = os.path.join(self.rootPath,"html","ebay","mobile3")
        
+        test = os.listdir(self.htmlFolderPath)
         for foldername in os.listdir(self.htmlFolderPath):
             matchObj = re.match(currModelIdRegex,foldername)
             if not matchObj:
@@ -38,17 +77,29 @@ class MobilesSpider(scrapy.Spider):
             self.currentTargetHtmlFolder = os.path.join(self.htmlFolderPath,matchObj.group())
             urls = self.HTMLFileURLGenerator(self.currentTargetHtmlFolder)
             if not urls:
-                return
+                continue
+            currModelId = matchObj.group(1)
             for url in urls:
-                yield scrapy.Request(url=f"file:///{url}", callback=self.parse)
-                break
-            break
+                request = scrapy.Request(url=f"file:///{url}", callback=self.parse)
+                request.meta['id'] = currModelId
+                yield request
 
-       
+            # counter-=1
+            # if counter == 0:
+            #     break
+            self.counter+=1
+
+    
+   
 
     def parse(self, response):
         #/tr/td[contains(@width,"50%")/text()]
-        res = {}
+        currId = response.meta['id']
+        currURL = response.request.url
+        if currId not in self.res:
+            self.res [currId] = {}
+
+        currRes = self.res[currId]
         previousKey = ""
         nextIsTarget = False
         items = response.xpath("//div[@class='itemAttr']/*/table/tr/td")
@@ -58,29 +109,34 @@ class MobilesSpider(scrapy.Spider):
                 continue
             label = item.css(".attrLabels").get()
             labelRes = getEnglishSentenseOnly(label)
+            attribute = itemText
+            attributeRes = getEnglishSentenseOnly(attribute)
         
             if labelRes:
                 if labelRes.upper() in (name.upper() for name in self.accLabels):
-                    res[labelRes] = []
-                    previousKey = labelRes
+                    shopeeKey = ebayJsonKeyPipe(labelRes)
+                    currRes[shopeeKey] = { }
+                    previousKey = shopeeKey
                     nextIsTarget = True
                 continue
             
-            attribute = itemText
-            attributeRes = getEnglishSentenseOnly(attribute)
+    
             if attributeRes:
                   if nextIsTarget and previousKey:
-                    res[previousKey].append(attributeRes)
+                    if (attributeRes in currRes[previousKey]):
+                        currRes[previousKey][attributeRes] += 1
+                    else:
+                        currRes[previousKey][attributeRes] = 1
                     nextIsTarget = False
                     previousKey = ""
              
-        f = open("result.json","w+")
-        f.write(json.dumps(res, indent=4, sort_keys=True))
-        f.close()
+        # f = open("result.json","w+")
+        # f.write(json.dumps(res, indent=4, sort_keys=True))
+        # f.close()
         # for i in range(len(res)):
         #     f.write(res[i]+"\r\n")
         # f.close()
-           
+        #print (currRes)
 
             
         # yield{

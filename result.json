@@ -1,5 +1,5 @@
 {
-    "Brand": [
-        "Sony"
-    ]
+    "Brand": {
+        "Sony": 0
+    }
 }
