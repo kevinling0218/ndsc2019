@@ -38,7 +38,7 @@ class HTMLGenerator:
     #Folder naming convention is number_modelName
     def __init__(self):
         self.rootPath = os.path.abspath(os.curdir)
-        self.folderPath = os.path.join(self.rootPath,"html","ebay","mobile2")
+        self.folderPath = os.path.join(self.rootPath,"html","ebay","mobile3")
 
         trainReader = trainDataPhoneModelReader()
         trainReader.readTrainDataPhoneModelIdList()
@@ -77,10 +77,19 @@ class HTMLGenerator:
                 newFilePath = os.path.join(newFolderPath,f"{currFolderName}_{str(idx + 1)}.html")
                 if not currHref:
                     break
+                #If we have this file already.
+                if os.path.isfile(newFilePath):
+                    continue
                 ff = requests.get(currHref)
                 currContent = ff.text
+
+                #extract only what we need
+                currContentSelector = Selector(text=currContent).xpath("//div[@class='itemAttr']")
+                targetHTMLContent = currContentSelector.get()
+                if not targetHTMLContent:
+                    continue
                 fileWriter = open(newFilePath,"w+",encoding="utf-8")
-                soup = bs(currContent)      
+                soup = bs(targetHTMLContent)      
                 prettyHTML = soup.prettify()
                 fileWriter.write(prettyHTML)
                 fileWriter.close()
