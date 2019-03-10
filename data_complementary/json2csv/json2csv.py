@@ -26,6 +26,27 @@ class Json2Csv:
             os.makedirs(self.finalCSVFolder)
         return
 
+
+    def setTargetModelData(self,targetModelData):
+        self.targetModelData = targetModelData
+
+
+    def generateResultArraySingle(self):
+        osStr = getFirstItemOfArray(self.OSPipe())
+        feature = ""
+        networkStr = getFirstItemOfArray(self.NetworkConnectionPipe())
+        ramStr = getFirstItemOfArray(self.RAMPipe())
+        brandStr = getFirstItemOfArray(self.BrandPipe())
+        warrantyStr = getFirstItemOfArray(self.WarrantyPipe())
+        storageCapcity = ""
+        colorFamily = ""
+        camera = ""
+        phoneScreen = getFirstItemOfArray(self.phoneScreenPipe())
+
+        resultArray = [osStr,feature,networkStr,ramStr,brandStr,warrantyStr,storageCapcity,colorFamily,camera,phoneScreen]
+        return resultArray
+
+
     def generateResultArray(self):
 
         osStrs = self.OSPipe()

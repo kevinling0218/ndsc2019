@@ -43,5 +43,11 @@ def removeDuplicateItemFromArray(theArray):
     mylist = list(dict.fromkeys(theArray))
     return mylist
 
+#get the string version of first item of input array , if array length is 0, return ""
+def getFirstItemOfArray(theArray):
+    if not theArray or len(theArray) == 0:
+        return ""
+    else:
+        return str(theArray[0])
 
 
