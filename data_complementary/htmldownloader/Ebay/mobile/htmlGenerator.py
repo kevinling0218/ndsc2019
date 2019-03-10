@@ -7,6 +7,7 @@ from urllib.parse import urlencode
 from pprint import pprint
 from scrapy.selector import Selector
 from bs4 import BeautifulSoup as bs
+from webcrawler.utils.data_reader import trainDataPhoneModelReader
 
 class keywordReader:
 
@@ -31,12 +32,17 @@ class keywordReader:
 
 class HTMLGenerator:
 
-    htmlRoot = "https://www.ebay.com/sch/i.html"#?_nkw=
+    #9355 means only search phone device  _nkw = "" <- accurate match  _nkw= <- similarity match
+    htmlRoot = "https://www.ebay.com/sch/9355/i.html"#?_nkw=
     itemListURLXpathSchema = "//*[@id='mainContent' and contains(@class,'srp-main-content')]//ul[contains(@class,'srp-results')]//li[contains(@class,'s-item')]//a[contains(@class,'s-item__link')]/@href"
     #Folder naming convention is number_modelName
     def __init__(self):
         self.rootPath = os.path.abspath(os.curdir)
-        self.folderPath = os.path.join(self.rootPath,"html","ebay","mobile")
+        self.folderPath = os.path.join(self.rootPath,"html","ebay","mobile3")
+
+        trainReader = trainDataPhoneModelReader()
+        trainReader.readTrainDataPhoneModelIdList()
+        self.modelIdList = trainReader.modelIdList
         return
     
     def test1(self):
@@ -44,6 +50,8 @@ class HTMLGenerator:
         modelDic = keyword.readMobileModelDic()
         #pprint(modelDic)
         for key,model in modelDic.items():
+            if not model in self.modelIdList: 
+                continue 
             #create a new folder
             currFolderName = f'{model}_{key}'
             newFolderPath = os.path.join(self.folderPath,currFolderName)
@@ -69,10 +77,19 @@ class HTMLGenerator:
                 newFilePath = os.path.join(newFolderPath,f"{currFolderName}_{str(idx + 1)}.html")
                 if not currHref:
                     break
+                #If we have this file already.
+                if os.path.isfile(newFilePath):
+                    continue
                 ff = requests.get(currHref)
                 currContent = ff.text
+
+                #extract only what we need
+                currContentSelector = Selector(text=currContent).xpath("//div[@class='itemAttr']")
+                targetHTMLContent = currContentSelector.get()
+                if not targetHTMLContent:
+                    continue
                 fileWriter = open(newFilePath,"w+",encoding="utf-8")
-                soup = bs(currContent)      
+                soup = bs(targetHTMLContent)      
                 prettyHTML = soup.prettify()
                 fileWriter.write(prettyHTML)
                 fileWriter.close()
@@ -90,7 +107,3 @@ class HTMLGenerator:
         res = urlparse.urlunparse(url_parts)
         return res
 
-
-
-htmlGen = HTMLGenerator()
-htmlGen.test1()

@@ -1,32 +1,35 @@
 import os
 import json
+import csv
 import itertools
 from webcrawler.utils.helper import *
 
 class Json2Csv:
     #Attributes
     currProjectFolderPath = os.path.abspath(os.curdir)
-    jsonRootFolder = os.path.join(currProjectFolderPath,"data_complementary","json2csv","json")
+    jsonRootFolder = os.path.join(currProjectFolderPath,"data_complementary","json2csv","json3")
     trainJsonFile = os.path.join(currProjectFolderPath,"data","mobile_profile_train.json")
     targetModelId = -1
     trainJsonData = {}
     targetModelData = {}
     result = []
+    finalCSVFolder = os.path.join(currProjectFolderPath,"data_complementary","final")
+    finalCSVName = "res_mobile_data_info_train.txt"
 
-    def __init__(self, modelId):
-        self.targetModelId = modelId
-        filePath = os.path.join(self.jsonRootFolder,f"{str(modelId)}.json")
-        with open (filePath) as f:
-            self.targetModelData = json.load(f)
+    def __init__(self):
+
         with open(self.trainJsonFile) as f:
             self.trainJsonData = json.load(f)
 
-        self.generateResultArray()
+        #create final csv folder if its not exist
+        if not os.path.exists(self.finalCSVFolder):
+            os.makedirs(self.finalCSVFolder)
         return
 
     def generateResultArray(self):
 
         osStrs = self.OSPipe()
+        features = []
         networkStrs = self.NetworkConnectionPipe()
         ramStrs = self.RAMPipe()
         brandStrs = self.BrandPipe()
@@ -36,17 +39,47 @@ class Json2Csv:
         cameras = self.cameraPipe()
         phoneScreens = self.phoneScreenPipe()
         
-        iterables = [osStrs,networkStrs, ramStrs,brandStrs,warrantyStrs,storageCapcities,colorFamilies,cameras,phoneScreens]
+        iterables = [osStrs,features,brandStrs, warrantyStrs, networkStrs, storageCapcities, colorFamilies,ramStrs,cameras,phoneScreens]
         for iterarray in iterables:
             fillNAArray(iterarray)
         resultArray = list(itertools.product(*iterables))
 
         return resultArray
+
+
+    def outputFinalCSV(self):
+        
+      
+        myFile = open(self.finalCSVName, 'w+')
+        #first line
+        myFile.write("Phone Model,Operating System,Features,Brand,Warranty Period,Network Connections,Storage Capacity,Color Family,Memory RAM,Camera,Phone Screen Size")  
+        for filename in os.listdir(self.jsonRootFolder):
+            filePath = os.path.join(self.jsonRootFolder,filename)
+            with open (filePath) as f:
+                self.targetModelData = json.load(f)
+                res = self.generateResultArray()
+               
+                for item in res:
+                    rowArray = ",".join(list(str(i) for i in list(item)))
+                    myFile.write(f"{filename},{rowArray}\n")
+        
+        myFile.close()
+                # with myFile:  
+                #     writer = csv.writer(myFile)
+                #     for item in res:
+                #         rowArray = list(str(i) for i in list(item))
+                #         writer.writerows(rowArray)
+        
+
+     
+       
     
     #OS string pipe
     def OSPipe(self):
         KEY = "Operating System"
         res = []
+        if KEY not in self.targetModelData:
+            return res
         osStr = self.targetModelData[KEY]
         if not osStr:
             return res
@@ -72,6 +105,8 @@ class Json2Csv:
     def NetworkConnectionPipe(self):
         KEY = "Network Connections"
         res = []
+        if KEY not in self.targetModelData:
+            return res
         networkConnection = self.targetModelData[KEY]
         if not networkConnection:
             return res
@@ -94,6 +129,8 @@ class Json2Csv:
 
         KEY = "Memory RAM"
         res = []
+        if KEY not in self.targetModelData:
+            return res
         ram = self.targetModelData[KEY]
         if not ram:
             return res
@@ -123,6 +160,8 @@ class Json2Csv:
 
         KEY = "Brand"
         res = []
+        if KEY not in self.targetModelData:
+            return res
         brand = self.targetModelData[KEY]
         if not brand:
             return res
@@ -138,6 +177,8 @@ class Json2Csv:
     def WarrantyPipe(self):
         KEY = "Warranty Period"
         res = []
+        if KEY not in self.targetModelData:
+            return res
         warranty = self.targetModelData[KEY]
         if not warranty:
             return res
@@ -169,6 +210,8 @@ class Json2Csv:
     def storageCapcityPipe(self):
         KEY = "Storage Capacity"
         res = []
+        if KEY not in self.targetModelData:
+            return res
         storageList = self.targetModelData[KEY]
         if not storageList or len(storageList) == 0:
             return res
@@ -202,6 +245,8 @@ class Json2Csv:
     def colorFamilyPipe(self):
         res_set = set()
         KEY = "Color Family"
+        if KEY not in self.targetModelData:
+            return list(res_set)
         colorList = self.targetModelData[KEY]
         if not colorList or len(colorList) == 0:
             return list(res_set)
@@ -230,6 +275,8 @@ class Json2Csv:
     def cameraPipe(self):
         res = []
         KEY = "Camera"
+        if KEY not in self.targetModelData:
+            return res
         cameraList = self.targetModelData[KEY]
         if not cameraList or len(cameraList) == 0:
             return res
@@ -253,6 +300,8 @@ class Json2Csv:
     def phoneScreenPipe(self):
         KEY = "Phone Screen Size"
         res = []
+        if KEY not in self.targetModelData:
+            return res
         phoneScreen = self.targetModelData[KEY]
         if not phoneScreen:
             return res
