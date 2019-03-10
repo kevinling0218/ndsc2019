@@ -34,8 +34,11 @@ class Json2Csv:
         ramStrs = self.RAMPipe()
         brandStrs = self.BrandPipe()
         warrantyStrs = self.WarrantyPipe()
+        #multi
         storageCapcities = self.storageCapcityPipe()
+        #multi
         colorFamilies = self.colorFamilyPipe()
+        #multi
         cameras = self.cameraPipe()
         phoneScreens = self.phoneScreenPipe()
         
@@ -52,7 +55,7 @@ class Json2Csv:
       
         myFile = open(self.finalCSVName, 'w+')
         #first line
-        myFile.write("Phone Model,Operating System,Features,Brand,Warranty Period,Network Connections,Storage Capacity,Color Family,Memory RAM,Camera,Phone Screen Size")  
+        myFile.write("Phone Model,Operating System,Features,Brand,Warranty Period,Network Connections,Storage Capacity,Color Family,Memory RAM,Camera,Phone Screen Size\n")  
         for filename in os.listdir(self.jsonRootFolder):
             filePath = os.path.join(self.jsonRootFolder,filename)
             with open (filePath) as f:
@@ -77,12 +80,12 @@ class Json2Csv:
     #OS string pipe
     def OSPipe(self):
         KEY = "Operating System"
-        res = []
+        res_set = set()
         if KEY not in self.targetModelData:
-            return res
-        osStr = self.targetModelData[KEY]
+            return list(res_set)
+        osStr = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not osStr:
-            return res
+            return list(res_set)
         
         lowerOS = osStr.lower().replace(" ","")
         trainOSObj = self.trainJsonData[KEY]
@@ -97,19 +100,19 @@ class Json2Csv:
         }
         for k,v in trainOSObj.items():
             if any(word in lowerOS for word in potentialObj[k]):
-                res.append(v)
+                res_set.add(v)
 
-        return res
+        return list(res_set)
         
     #NetworkConnectionPipe
     def NetworkConnectionPipe(self):
         KEY = "Network Connections"
-        res = []
+        res_set = set()
         if KEY not in self.targetModelData:
-            return res
-        networkConnection = self.targetModelData[KEY]
+            return list(res_set)
+        networkConnection = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not networkConnection:
-            return res
+            return list(res_set)
         lowerNC = networkConnection.lower().replace(" ", "")
         trainNCObj = self.trainJsonData[KEY]
         potentialObj = {
@@ -120,20 +123,20 @@ class Json2Csv:
         }
         for k,v in trainNCObj.items():
             if any(word in lowerNC for word in potentialObj[k]):
-                res.append(v)
+                res_set.add(v)
 
-        return res
+        return list(res_set)
 
     #Memory RAM
     def RAMPipe(self):
 
         KEY = "Memory RAM"
-        res = []
+        res_set = set()
         if KEY not in self.targetModelData:
-            return res
-        ram = self.targetModelData[KEY]
+            return list(res_set)
+        ram = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not ram:
-            return res
+            return list(res_set)
         lowerRAM = ram.lower().replace(" ", "")
         trainRamObj = self.trainJsonData[KEY]
         potentialObj ={
@@ -150,38 +153,38 @@ class Json2Csv:
         }
         for k,v in trainRamObj.items():
             if any(word in lowerRAM for word in potentialObj[k]):
-                res.append(v)
+                res_set.add(v)
         
-        return res
+        return list(res_set)
         
     
     #Brand
     def BrandPipe(self):
 
         KEY = "Brand"
-        res = []
+        res_set = set()
         if KEY not in self.targetModelData:
-            return res
-        brand = self.targetModelData[KEY]
+            return list(res_set)
+        brand = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not brand:
-            return res
+            return list(res_set)
         lowerBrand = brand.lower().replace(" ","")
         trainBrandObj = self.trainJsonData[KEY]
         for k,v in trainBrandObj.items():
             if any(word in lowerBrand for word in k.split()):
-                res.append(v)
-        return res
+                res_set.add(v)
+        return list(res_set)
 
     #Warranty Period
     #1y 1m 1month 1 month 1year 1 year  
     def WarrantyPipe(self):
         KEY = "Warranty Period"
-        res = []
+        res_set = set()
         if KEY not in self.targetModelData:
-            return res
-        warranty = self.targetModelData[KEY]
+            return list(res_set)
+        warranty = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not warranty:
-            return res
+            return list(res_set)
         suspectNumber = 0
         lowerWarranty = warranty.lower().replace(" ","")
         trainWarrantyObj = self.trainJsonData[KEY]
@@ -202,19 +205,19 @@ class Json2Csv:
                 resultKey = f"{suspectNumber} year"
             
         if resultKey and resultKey in trainWarrantyObj:
-            return res.append(trainWarrantyObj[resultKey])
+            return res_set.add(trainWarrantyObj[resultKey])
 
-        return res
+        return list(res_set)
     
     #Storage Capacity
     def storageCapcityPipe(self):
         KEY = "Storage Capacity"
-        res = []
+        res_set = set()
         if KEY not in self.targetModelData:
-            return res
-        storageList = self.targetModelData[KEY]
+            return list(res_set)
+        storageList = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not storageList or len(storageList) == 0:
-            return res
+            return list(res_set)
             
         trainStorageObj = self.trainJsonData[KEY]
         for idx,val in enumerate(storageList):
@@ -231,14 +234,14 @@ class Json2Csv:
                 #When current unit is G
                 if isLowerStorageContainG and isTrainContainsG:
                     if lowerStorageNumberOnly == trainNumber:
-                        res.append(v)
+                        res_set.add(v)
                 
                 #When current unit is M
                 if isLowerStorageContainM and isTrainContainsM:
                     if lowerStorageNumberOnly == trainNumber:
-                        res.append(v)
+                        res_set.add(v)
 
-        return res
+        return list(res_set)
         
     
     #Color Family (skip)
@@ -247,7 +250,7 @@ class Json2Csv:
         KEY = "Color Family"
         if KEY not in self.targetModelData:
             return list(res_set)
-        colorList = self.targetModelData[KEY]
+        colorList = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not colorList or len(colorList) == 0:
             return list(res_set)
         
@@ -273,53 +276,53 @@ class Json2Csv:
     #From pandas histogram
     #Return value is an array(list)
     def cameraPipe(self):
-        res = []
+        res_set = set()
         KEY = "Camera"
         if KEY not in self.targetModelData:
-            return res
-        cameraList = self.targetModelData[KEY]
+            return list(res_set)
+        cameraList = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not cameraList or len(cameraList) == 0:
-            return res
+            return list(res_set)
     
         trainCameraObj = self.trainJsonData[KEY]
         ##Append single slot or dual slot
         if len(cameraList) == 1:
-            res.append(6)
+            res_set.add(6)
         elif len(cameraList) > 1:
-            res.append(1)
+            res_set.add(1)
 
         for idx, val in enumerate(cameraList):    
             lowerCamera = val.lower().replace(" ","")
             suspectNumber = getFirstNumberOnly(lowerCamera)
             for numText in trainCameraObj:
                 if (suspectNumber == getFirstNumberOnly(numText)):
-                    res.append(trainCameraObj[numText])
-        return res
+                   res_set.add(trainCameraObj[numText])
+        return list(res_set)
 
     #Phone Screen Size
     def phoneScreenPipe(self):
         KEY = "Phone Screen Size"
-        res = []
+        res_set = set()
         if KEY not in self.targetModelData:
-            return res
-        phoneScreen = self.targetModelData[KEY]
+            return list(res_set)
+        phoneScreen = removeDuplicateItemFromArray(self.targetModelData[KEY])
         if not phoneScreen:
-            return res
+            return list(res_set)
         lowerPhoneScreen = phoneScreen.lower().replace(" ","")
         suspectNumber = getFirstNumberOnly(lowerPhoneScreen)
         if suspectNumber <= 3.5:
-             res.append(4)
+            res_set.add(4)
         elif suspectNumber > 3.5 and suspectNumber <= 4:
-             res.append(1)
+            res_set.add(1)
         elif suspectNumber > 4 and suspectNumber <= 4.5:
-             res.append(3)
+            res_set.add(3)
         elif suspectNumber > 4.5 and suspectNumber <= 5:
-             res.append(0)
+            res_set.add(0)
         elif suspectNumber > 5 and suspectNumber < 5.5:
-             res.append(5)
+            res_set.add(5)
         elif suspectNumber > 5.5 :
-             res.append(2)
-        return res
+            res_set.add(2)
+        return list(res_set)
         
             
 # json2csv = Json2Csv(1208)

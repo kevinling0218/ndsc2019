@@ -55,8 +55,13 @@ class MobilesSpider(scrapy.Spider):
             tempRes[k] = {}
             if isinstance(v,dict):
                 for key,value in v.items():
-                    highestKey = max(value.items(), key=operator.itemgetter(1))[0]
-                    tempRes[k][key] = highestKey
+                    if isinstance(value,list):
+                        tempRes[k][key] = value
+                    elif isinstance(value,dict):
+                        highestKey = max(value.items(), key=operator.itemgetter(1))[0]
+                        tempRes[k][key] = highestKey
+            # else if isinstance(v, list):
+            #     tempRes[k][]
         self.res = tempRes
         
 
@@ -115,7 +120,7 @@ class MobilesSpider(scrapy.Spider):
             if labelRes:
                 if labelRes.upper() in (name.upper() for name in self.accLabels):
                     shopeeKey = ebayJsonKeyPipe(labelRes)
-                    currRes[shopeeKey] = { }
+                    #currRes[shopeeKey] = { }
                     previousKey = shopeeKey
                     nextIsTarget = True
                 continue
@@ -123,10 +128,19 @@ class MobilesSpider(scrapy.Spider):
     
             if attributeRes:
                   if nextIsTarget and previousKey:
-                    if (attributeRes in currRes[previousKey]):
-                        currRes[previousKey][attributeRes] += 1
+                    
+                    isShopeeKeyArray = isShopeeKeyArrayValue(previousKey)
+                    if isShopeeKeyArray:
+                        if (previousKey not in currRes):
+                            currRes[previousKey] = []
+                        currRes[previousKey].append(attributeRes)
                     else:
-                        currRes[previousKey][attributeRes] = 1
+                        if (previousKey not in currRes):
+                            currRes[previousKey] = {}
+                        if (attributeRes in currRes[previousKey]):
+                            currRes[previousKey][attributeRes] += 1
+                        else:
+                            currRes[previousKey][attributeRes] = 1
                     nextIsTarget = False
                     previousKey = ""
              

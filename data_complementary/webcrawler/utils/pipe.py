@@ -8,3 +8,10 @@ ShopeeKey = ["Operating System","Features","Brand", "Warranty Period","Network C
 
 def ebayJsonKeyPipe(ebayKey):
     return ShopeeKey[EbayKey.index(ebayKey)]
+
+
+def isShopeeKeyArrayValue(shopeeKey):
+    if shopeeKey == "Camera" or shopeeKey == "Color Family" or shopeeKey == "Storage Capacity":
+        return True
+    else:
+        return False

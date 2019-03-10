@@ -37,7 +37,11 @@ def fillNAArray(theArray):
     
     return
 
-
+def removeDuplicateItemFromArray(theArray):
+    if not isinstance(theArray,list):
+        return theArray
+    mylist = list(dict.fromkeys(theArray))
+    return mylist
 
 
 
