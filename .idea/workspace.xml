@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dadecbd-818d-4c1d-86e4-6b5674516787" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data_complementary/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/htmldownloader/Ebay/mobile/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/htmldownloader/Ebay/mobile/htmlGenerator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/htmldownloader/GSMArena/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/htmldownloader/GSMArena/htmlGenerator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/json2csv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/json2csv/json/1208.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/json2csv/json2csv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/mobiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/quotes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/runner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/sampleoutput_1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/sampleoutput_2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/scrapy.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/items.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/middlewares.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/pipelines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/spiders/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/spiders/mobiles_spider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/spiders/quotes_spider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/utils/helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/utils/tester.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_complementary/runner2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/utils/data_reader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_complementary/webcrawler/utils/pipe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res_mobile_data_info_train.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mobile_profile_train.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/mobile_profile_train.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_complementary/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_complementary/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_complementary/htmldownloader/Ebay/mobile/htmlGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_complementary/htmldownloader/Ebay/mobile/htmlGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_complementary/json2csv/json2csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_complementary/json2csv/json2csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_complementary/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_complementary/runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_complementary/webcrawler/spiders/mobiles_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_complementary/webcrawler/spiders/mobiles_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_complementary/webcrawler/utils/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_complementary/webcrawler/utils/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.json" beforeDir="false" afterPath="$PROJECT_DIR$/result.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,18 +21,91 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/ndsc2019$XGBoost.coverage" NAME="XGBoost Coverage Results" MODIFIED="1552116565277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res_mobile_data_info_train.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/result.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_complementary/sampleoutput_1.csv">
+          <provider selected="true" editor-type-id="csv-text-editor" />
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NLP/XGBoost.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-167">
+              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+              <folding>
+                <element signature="e#17#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NLP/train_test_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="12" selection-end-column="40" />
+              <folding>
+                <element signature="e#17#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NLP/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="508">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#79#98#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NLP/features.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,14 +114,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/NLP/train_test_data.py" />
+        <option value="$PROJECT_DIR$/NLP/XGBoost.py" />
+        <option value="$PROJECT_DIR$/NLP/features.py" />
+        <option value="$PROJECT_DIR$/NLP/util.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="71" />
-    <option name="y" value="23" />
-    <option name="width" value="1191" />
-    <option name="height" value="712" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="722" />
+    <option name="width" value="718" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -105,6 +163,35 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="XGBoost" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ndsc2019" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLP/XGBoost.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.XGBoost" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -115,19 +202,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552052191606</updated>
-      <workItem from="1552052194336" duration="29000" />
+      <workItem from="1552052194336" duration="4633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29000" />
+    <option name="totallyTimeSpent" value="4633000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="722" y="0" width="718" height="900" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28254437" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -137,7 +223,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2951807" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -153,12 +239,61 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/data_complementary/sampleoutput_1.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/features.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/train_test_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" selection-end-column="40" />
+          <folding>
+            <element signature="e#17#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/XGBoost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-167">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+          <folding>
+            <element signature="e#17#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#79#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res_mobile_data_info_train.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
