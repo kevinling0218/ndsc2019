@@ -26,3 +26,4 @@
 from json2csv.train_modifier import TrainModifier
 trainModifier = TrainModifier()
 trainModifier.modifyDataFrame()
+#trainModifier.modifyDataFrameTest()

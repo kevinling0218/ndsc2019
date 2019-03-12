@@ -15,6 +15,7 @@ class TrainModifier:
     def __init__(self):
         trainReader = trainDataPhoneModelReader()
         self.df_mobile_val = trainReader.readTrainDataAll()
+        #self.df_mobile_val = trainReader.readTestTrainDataAll()
         self.json2csv = Json2Csv()
         self.jsonResultReader = JsonResultReader()
         self.rootPath = os.path.abspath(os.curdir)
@@ -35,7 +36,19 @@ class TrainModifier:
         
         #Ready for final answer
         self.df_mobile_val.to_csv(self.csvoutPath, index=False)
-        
+
+    
+    def modifyDataFrameTest(self):
+        phoneModelIdStr = "1526"
+        targetModelData = self.jsonResultReader.getTargetDataByModelId(phoneModelIdStr)
+        self.json2csv.setTargetModelData(targetModelData)
+        resultArrayForCurrRow = self.json2csv.generateResultArraySingle()
+        row = self.df_mobile_val.loc[0]
+        oldRow = row
+        self.completeDataFrameRow(0,row,resultArrayForCurrRow)
+        newRow = self.df_mobile_val.loc[0]
+
+        print(newRow)
 
 
 
@@ -44,16 +57,16 @@ class TrainModifier:
     def completeDataFrameRow(self,currIndex,currRow, resultArrayRow):
         #osStr,feature,networkStr,ramStr,brandStr,warrantyStr,storageCapcity,colorFamily,camera,phoneScreen
         #Operating System,Features,Network Connections,Memory RAM,Brand,Warranty Period,Storage Capacity,Color Family,Phone Model,Camera,Phone Screen Size
-        
+        columnName = ["itemid","title","image_path","Operating System","Features","Network Connections","Memory RAM","Brand","Warranty Period","Storage Capacity","Color Family","Phone Model",
+        "Camera","Phone Screen Size"]
         for index, key in enumerate(currRow):
-            strKey = str(key)
-            currItem = strKey
-            #note index === 10 is phone model
-            if index == 10:
+            #note index === 11 is phone model
+            if index == 11:
                 continue
             #if curr column data is na
-            if pd.isna(currItem) and resultArrayRow[index]:
-                self.df_mobile_val.set_value(currIndex,strKey, resultArrayRow[index])
+            if pd.isna(key) and resultArrayRow[index]:
+                # self.df_mobile_val.set_value(currIndex,columnName[index], resultArrayRow[index])
+                self.df_mobile_val.at[currIndex,columnName[index]] = resultArrayRow[index]
 
 
             

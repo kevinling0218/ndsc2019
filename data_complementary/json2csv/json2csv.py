@@ -32,6 +32,9 @@ class Json2Csv:
 
 
     def generateResultArraySingle(self):
+        itemIdStr = ""
+        titleStr = ""
+        imagePathStr = ""
         osStr = getFirstItemOfArray(self.OSPipe())
         feature = ""
         networkStr = getFirstItemOfArray(self.NetworkConnectionPipe())
@@ -40,10 +43,11 @@ class Json2Csv:
         warrantyStr = getFirstItemOfArray(self.WarrantyPipe())
         storageCapcity = ""
         colorFamily = ""
+        phoneModelStr = ""
         camera = ""
         phoneScreen = getFirstItemOfArray(self.phoneScreenPipe())
 
-        resultArray = [osStr,feature,networkStr,ramStr,brandStr,warrantyStr,storageCapcity,colorFamily,camera,phoneScreen]
+        resultArray = [itemIdStr,titleStr,imagePathStr, osStr,feature,networkStr,ramStr,brandStr,warrantyStr,storageCapcity,colorFamily,phoneModelStr,camera,phoneScreen]
         return resultArray
 
 
