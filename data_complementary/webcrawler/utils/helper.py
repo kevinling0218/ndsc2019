@@ -1,5 +1,6 @@
 import sys
 import re
+import operator
 from decimal import Decimal
 
 def cleanText(theText):
@@ -63,10 +64,12 @@ def firstTwoHighestDuplicatedTimesStringInDesc(theArray):
         else:
             counterDic[item] = 1
     
-    sortedDic = sorted(counterDic.items(),key= operator.itemgetter(1)).reverse()
+    sortedDic = sorted(counterDic.items(),key= lambda x: x[1], reverse = True)
     listOfRes = []
+    if not sortedDic:
+        return listOfRes
     for key in sortedDic:
-        listOfRes.append(key)
+        listOfRes.append(key[1])
 
     return listOfRes[:2]
 

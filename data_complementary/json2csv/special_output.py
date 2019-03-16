@@ -22,6 +22,7 @@ class SpecialOutput:
         self.finalJsonFileName = "special.json"
         self.finalJsonFileFolder = os.path.join(currProjectFolderPath,"data_complementary","final")
         self.finalJsonFilePath = os.path.join(self.finalJsonFileFolder,self.finalJsonFileName)
+        self.jsonRootFolder = os.path.join(currProjectFolderPath,"data_complementary","json2csv","json3")
         return
 
     #process camear
@@ -42,52 +43,68 @@ class SpecialOutput:
     # }
     def processCamera(self, currJsonObj):
 
+        res = []
         if not currJsonObj: 
-            return
-        
+            return res
+        if "Camera" not in currJsonObj:
+            return res
         cameraList = currJsonObj["Camera"]
         res = firstTwoHighestDuplicatedTimesStringInDesc(cameraList)
         return res
     
     def processColorFamily(self, currJsonObj):
-
+        res = []
         if not currJsonObj:
-            return
-
+            return res
+        if "Color Family" not in currJsonObj:
+            return res
         colorFamily = currJsonObj["Color Family"]
         res = firstTwoHighestDuplicatedTimesStringInDesc(colorFamily)
         return res
 
     def storageCapacity(self, currJsonObj):
 
+        res = []
         if not currJsonObj:
-            return 
+            return res
+        if "Storage Capacity" not in currJsonObj:
+            return res 
         
         storageCapacity = currJsonObj["Storage Capacity"]
         res = firstTwoHighestDuplicatedTimesStringInDesc(storageCapacity)
         return res
 
 
-    def generateCurrJsonOutputObj(self):
+    def generateCurrJsonOutputObj(self,currJsonObj):
         currJsonOutputObj = {}
+  
+        cameraList = self.processCamera(currJsonObj)
+        colorFamilyList = self.processColorFamily(currJsonObj)
+        storageCapacityList = self.storageCapacity(currJsonObj)
         
+        currJsonOutputObj["Camera"] = cameraList
+        currJsonOutputObj["Color Family"] = colorFamilyList
+        currJsonOutputObj["Storage Capacity"] = storageCapacityList
 
+        return currJsonOutputObj
+
+        
 
 
     def outputJson(self):
 
+        outObj = {}
         myFile = open(self.finalJsonFilePath, 'w+')
         #first line 
         for filename in os.listdir(self.jsonRootFolder):
             filePath = os.path.join(self.jsonRootFolder,filename)
             with open (filePath) as f:
                 self.targetModelData = json.load(f)
-                res = self.generateResultArray()
+                currObj = self.generateCurrJsonOutputObj(self.targetModelData)
+                filenameWithoutExtention = os.path.splitext(filename)[0]
+                outObj[filenameWithoutExtention] = currObj
                
-                for item in res:
-                    rowArray = ",".join(list(str(i) for i in list(item)))
-                    myFile.write(f"{filename},{rowArray}\n")
-        
+        myFile.write(json.dumps(outObj, indent=4, sort_keys=True))
         myFile.close()
 
         

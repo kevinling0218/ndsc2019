@@ -17,13 +17,19 @@
 
 # 2.Run runner.py
 
-# 3.outPut final csv
+# 3.OutPut final csv
 # from json2csv.json2csv import *
 # final = Json2Csv()
 # final.outputFinalCSV()
 
 
-from json2csv.train_modifier import TrainModifier
-trainModifier = TrainModifier()
-trainModifier.modifyDataFrame()
-#trainModifier.modifyDataFrameTest()
+# 3.1. Generate completed csv.
+# from json2csv.train_modifier import TrainModifier
+# trainModifier = TrainModifier()
+# trainModifier.modifyDataFrame()
+# trainModifier.modifyDataFrameTest()
+
+
+from json2csv.special_output import SpecialOutput
+specialOutput = SpecialOutput()
+specialOutput.outputJson()
