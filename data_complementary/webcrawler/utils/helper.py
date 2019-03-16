@@ -51,3 +51,24 @@ def getFirstItemOfArray(theArray):
         return str(theArray[0])
 
 
+def firstTwoHighestDuplicatedTimesStringInDesc(theArray):
+
+    if not isinstance(theArray,list):
+        return theArray
+
+    counterDic = {}
+    for item in theArray:
+        if item in counterDic:
+            counterDic[item] += 1
+        else:
+            counterDic[item] = 1
+    
+    sortedDic = sorted(counterDic.items(),key= operator.itemgetter(1)).reverse()
+    listOfRes = []
+    for key in sortedDic:
+        listOfRes.append(key)
+
+    return listOfRes[:2]
+
+
+
