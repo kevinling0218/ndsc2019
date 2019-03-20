@@ -35,7 +35,7 @@ def column_class_to_text(df, category, column):
     column_map = {}
     column_map[column] = {v: k for k, v in map_json[column].items()}
     df.loc[:, column] = df[column].map(column_map[column])
-    df.loc[:, column+'_predicted'] = df[column].map(column_map[column])
+    df.loc[:, column+'_predicted'] = df[column+'_predicted'].map(column_map[column])
     return df
 
 
