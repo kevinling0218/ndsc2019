@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dadecbd-818d-4c1d-86e4-6b5674516787" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NLP/translate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_complementary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ndsc2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ndsc2019.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EDA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/EDA.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP/NLP_2_class_prediction.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/NLP_2_class_prediction.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/NLP_model_training_new.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/NLP_model_training_new.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/translate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile_api/fonoapi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_api/fonoapi/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,51 +17,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/ndsc2019$mobile_complementary.coverage" NAME="mobile_complementary Coverage Results" MODIFIED="1553137160329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ndsc2019$XGBoost.coverage" NAME="XGBoost Coverage Results" MODIFIED="1552116565277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res_mobile_data_info_train.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_complementary/htmldownloader/Ebay/mobile/htmlGenerator.py">
+        <entry file="file://$PROJECT_DIR$/data/beauty_profile_train.json">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="9" selection-start-column="9" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/mobile_data_info_train_competition.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="4365">
-              <caret line="291" column="11" selection-start-line="291" selection-start-column="11" selection-end-line="291" selection-end-column="11" />
+              <caret column="8035" selection-start-column="8031" selection-end-column="8035" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/NLP/translate.py">
+        <entry file="file://$PROJECT_DIR$/mobile_complementary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="182">
+              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/beauty_profile_train.json">
+        <entry file="file://$PROJECT_DIR$/mobile_api/fonoapi/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="8035" selection-start-column="8031" selection-end-column="8035" />
+              <caret column="23" selection-start-column="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -139,15 +124,18 @@
         <option value="$PROJECT_DIR$/NLP/util.py" />
         <option value="$PROJECT_DIR$/data/mobile_profile_train.json" />
         <option value="$PROJECT_DIR$/NLP/translate.py" />
+        <option value="$PROJECT_DIR$/mobile_api/fonoapi/__init__.py" />
+        <option value="$PROJECT_DIR$/mobile_complementary.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="454" />
+    <option name="x" value="550" />
     <option name="y" value="23" />
     <option name="width" value="986" />
     <option name="height" value="830" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -165,6 +153,17 @@
               <item name="ndsc2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="ndsc2019" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ndsc2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ndsc2019" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile_api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ndsc2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ndsc2019" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile_api" type="462c0819:PsiDirectoryNode" />
+              <item name="fonoapi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ndsc2019" type="b2602c69:ProjectViewProjectNode" />
@@ -196,7 +195,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.mobile_complementary">
     <configuration name="XGBoost" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ndsc2019" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -219,8 +218,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mobile_complementary" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ndsc2019" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mobile_complementary.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mobile_complementary" />
         <item itemvalue="Python.XGBoost" />
       </list>
     </recent_temporary>
@@ -238,21 +260,22 @@
       <workItem from="1552052194336" duration="10656000" />
       <workItem from="1552238083337" duration="1255000" />
       <workItem from="1552355863550" duration="603000" />
+      <workItem from="1553135135442" duration="3644000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12514000" />
+    <option name="totallyTimeSpent" value="16158000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21530758" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14806867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21084337" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31084338" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -261,8 +284,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.4493976" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -275,10 +298,10 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data_complementary/sampleoutput_1.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/NLP/features.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -357,27 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_complementary/htmldownloader/Ebay/mobile/htmlGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/mobile_data_info_train_competition.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="4365">
-          <caret line="291" column="11" selection-start-line="291" selection-start-column="11" selection-end-line="291" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/beauty_profile_train.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8035" selection-start-column="8031" selection-end-column="8035" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/mobile_profile_train.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2385">
@@ -411,10 +413,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../aml_news/venv/lib/python3.6/site-packages/pip-10.0.1-py3.6.egg/pip/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/NLP/translate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/mobile_data_info_train_competition.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="475">
+          <caret line="291" column="11" selection-start-line="291" selection-start-column="11" selection-end-line="291" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_complementary/htmldownloader/Ebay/mobile/htmlGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/beauty_profile_train.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8035" selection-start-column="8031" selection-end-column="8035" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile_api/fonoapi/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile_complementary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
         </state>
       </provider>
     </entry>
