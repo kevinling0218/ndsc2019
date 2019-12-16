@@ -1,4 +1,6 @@
 from mobile_api.fonoapi.fonoapi import FonoAPI
+import json
+import pandas as pd
 
 API_TOKEN = '67c6b1f0f74d8feddc38f44481cc2b85c3374b3ec8fb051d'
 fon  = FonoAPI(API_TOKEN)
@@ -7,6 +9,31 @@ attribute_list = ['DeviceName', 'Brand', 'technology', 'dimensions', 'size', 're
                   'camera_c', 'features_c', 'internal', 'netword_c', 'features',
                   'camera', 'display','_2g_bands', '_3g_bands', '_4g_bands', 'os',
                   'body_c', 'colors', 'primary_', 'multitouch', 'gps']
+
+with open('./data/mobile_profile_train.json') as f:
+    mobile_json = json.load(f)
+
+# devices = mobile_json['Phone Model'].keys()
+#
+# devices_dict = {}
+#
+# for device in devices:
+#     phones = fon.getdevice(device)
+#     phones_df = phones.dataframe(attribute_list)
+#     devices_dict[device] = phones_df
+#
+# devices_dict_clean = {k: v for k, v in devices_dict.items() if (v.shape[0] >=1)}
+#
+# for key, value in devices_dict_clean.items():
+#     print(key)
+#     value = value[value['DeviceName'].str.lower() == key]
+#     devices_dict_clean[key] = value
+#
+# devices_dict_clean_2 = {k: v for k, v in devices_dict_clean.items() if (v.shape[0] >=1)}
+# mobile_df = pd.DataFrame(columns = attribute_list)
+#
+# for key, value in devices_dict_clean_2.items():
+#     mobile_df = mobile_df.append(value)
 
 color_list = ['blue', 'biru',
               'gold', 'emas',
@@ -35,3 +62,4 @@ color_list = ['blue', 'biru',
               'white', 'putih',
               'red', 'merah'
               ]
+

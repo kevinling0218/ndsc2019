@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dadecbd-818d-4c1d-86e4-6b5674516787" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mobile_complementary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ndsc2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ndsc2019.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP/debug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/.ipynb_checkpoints/NLP_model_training_new-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/.ipynb_checkpoints/NLP_model_training_new-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/NLP_model_training.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/NLP_model_training.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP/NLP_model_training_new.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/NLP_model_training_new.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP/translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/translate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP_2_class_prediction_new.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_2_class_prediction_new.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/combine_fashion_data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/combine_fashion_data.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/fashion_data_info_train_competition.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/fashion_data_info_train_competition.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile_api" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_api" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_api/fonoapi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_api/fonoapi/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile_complementary.py" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_complementary.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,77 +22,111 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ndsc2019$mobile_complementary.coverage" NAME="mobile_complementary Coverage Results" MODIFIED="1553137160329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ndsc2019$debug.coverage" NAME="debug Coverage Results" MODIFIED="1553223624221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
+    <SUITE FILE_PATH="coverage/ndsc2019$duplicate_remove.coverage" NAME="duplicate_remove Coverage Results" MODIFIED="1553223562462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
+    <SUITE FILE_PATH="coverage/ndsc2019$mobile_complementary.coverage" NAME="mobile_complementary Coverage Results" MODIFIED="1553170004271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ndsc2019$XGBoost.coverage" NAME="XGBoost Coverage Results" MODIFIED="1552116565277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/beauty_profile_train.json">
+        <entry file="file://$PROJECT_DIR$/NLP/duplicate_remove.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8035" selection-start-column="8031" selection-end-column="8035" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mobile_complementary.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+            <state relative-caret-position="270">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mobile_api/fonoapi/__init__.py">
+        <entry file="file://$PROJECT_DIR$/NLP/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" selection-start-column="23" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/mobile_profile_train.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2385">
-              <caret line="159" selection-start-line="159" selection-end-line="159" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_complementary/webcrawler/spiders/mobiles_spider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="555">
+              <caret line="40" selection-start-line="40" selection-end-line="50" selection-end-column="13" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#79#98#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/beauty_data_info_train_competition.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="10350">
-              <caret line="690" column="62" selection-start-line="690" selection-start-column="62" selection-end-line="690" selection-end-column="62" />
+        <entry file="file://$PROJECT_DIR$/NLP/NLP_model_training_new.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="0" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/fashion_data_info_val_competition.csv">
-          <provider selected="true" editor-type-id="csv-text-editor" />
+        <entry file="file://$PROJECT_DIR$/NLP/debug.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1230">
+              <caret line="95" selection-start-line="95" selection-end-line="95" selection-end-column="19" />
+              <folding>
+                <element signature="e#17#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/fashion_data_info_train_competition.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="390">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="59" />
+        <entry file="file://$PROJECT_DIR$/NLP/features.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NLP/translate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NLP/train_test_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="12" selection-end-column="40" />
+              <folding>
+                <element signature="e#17#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/dist/kfasta.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NLP/NLP_model_training.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../repo/signal_generation/prototype.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="34" column="62" selection-start-line="27" selection-end-line="41" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,6 +146,7 @@
       <find>skin_type</find>
       <find>laptop</find>
       <find>lenovo</find>
+      <find>devices_dict</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,22 +158,25 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/NLP/train_test_data.py" />
         <option value="$PROJECT_DIR$/NLP/XGBoost.py" />
-        <option value="$PROJECT_DIR$/NLP/features.py" />
         <option value="$PROJECT_DIR$/NLP/NLP_2_class_prediction.ipynb" />
         <option value="$PROJECT_DIR$/NLP/NLP_2_class_prediction_new.ipynb" />
-        <option value="$PROJECT_DIR$/NLP/util.py" />
         <option value="$PROJECT_DIR$/data/mobile_profile_train.json" />
         <option value="$PROJECT_DIR$/NLP/translate.py" />
         <option value="$PROJECT_DIR$/mobile_api/fonoapi/__init__.py" />
         <option value="$PROJECT_DIR$/mobile_complementary.py" />
+        <option value="$PROJECT_DIR$/NLP/duplicate_remove.py" />
+        <option value="$PROJECT_DIR$/NLP/features.py" />
+        <option value="$PROJECT_DIR$/NLP/debug.py" />
+        <option value="$PROJECT_DIR$/NLP/util.py" />
+        <option value="$USER_HOME$/Downloads/ling.ran/ling.ran.ovpn" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="550" />
-    <option name="y" value="23" />
-    <option name="width" value="986" />
-    <option name="height" value="830" />
+    <option name="x" value="589" />
+    <option name="y" value="27" />
+    <option name="width" value="1574" />
+    <option name="height" value="829" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -141,7 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,6 +216,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -195,7 +238,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mobile_complementary">
+  <component name="RunManager" selected="Python.debug">
     <configuration name="XGBoost" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ndsc2019" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -210,6 +253,50 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLP/XGBoost.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="debug" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ndsc2019" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLP/debug.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="duplicate_remove" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ndsc2019" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLP/duplicate_remove.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -242,6 +329,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.debug" />
+        <item itemvalue="Python.duplicate_remove" />
         <item itemvalue="Python.mobile_complementary" />
         <item itemvalue="Python.XGBoost" />
       </list>
@@ -260,22 +349,27 @@
       <workItem from="1552052194336" duration="10656000" />
       <workItem from="1552238083337" duration="1255000" />
       <workItem from="1552355863550" duration="603000" />
-      <workItem from="1553135135442" duration="3644000" />
+      <workItem from="1553135135442" duration="11105000" />
+      <workItem from="1553178401034" duration="6001000" />
+      <workItem from="1553478017566" duration="31000" />
+      <workItem from="1559293864022" duration="899000" />
+      <workItem from="1559544609681" duration="1239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16158000" />
+    <option name="totallyTimeSpent" value="31789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14806867" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26680973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31084338" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37108433" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -285,12 +379,13 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.4493976" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.1879518" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Json Parser" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,23 +398,6 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NLP/features.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLP/train_test_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="e#17#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NLP/XGBoost.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-167">
@@ -327,13 +405,6 @@
           <folding>
             <element signature="e#17#36#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -346,16 +417,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NLP/NLP_2_class_prediction_new.ipynb" />
-    <entry file="file://$PROJECT_DIR$/NLP/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-          <folding>
-            <element signature="e#79#98#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_complementary/json2csv/json/1208.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -380,48 +441,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/mobile_profile_train.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2385">
-          <caret line="159" selection-start-line="159" selection-end-line="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_complementary/webcrawler/spiders/mobiles_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/beauty_data_info_train_competition.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="10350">
-          <caret line="690" column="62" selection-start-line="690" selection-start-column="62" selection-end-line="690" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/fashion_data_info_val_competition.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/fashion_data_info_train_competition.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="390">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../aml_news/venv/lib/python3.6/site-packages/pip-10.0.1-py3.6.egg/pip/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLP/translate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/mobile_data_info_train_competition.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
@@ -444,6 +465,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mobile_complementary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mobile_api/fonoapi/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -451,10 +489,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile_complementary.py">
+    <entry file="file://$PROJECT_DIR$/data/mobile_profile_train.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        <state relative-caret-position="2385">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/fashion_data_info_train_competition_new.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="75">
+          <caret line="5" column="47" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/b7bb25bb0d1d7fca8dbd2a01acb81174/Message/MessageTemp/1069848b90ddf948d70c986ac9118ad1/File/duplicate_remove.py" />
+    <entry file="file://$PROJECT_DIR$/data/beauty_data_info_train_competition.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="10350">
+          <caret line="690" column="62" selection-start-line="690" selection-start-column="62" selection-end-line="690" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/fashion_data_info_val_competition.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/fashion_data_info_train_competition.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="60">
+          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/submission_2103.csv">
+      <provider editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/submission_2103_1.csv">
+      <provider editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_complementary/webcrawler/spiders/mobiles_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/duplicate_remove.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="40" selection-start-line="40" selection-end-line="50" selection-end-column="13" />
+          <folding>
+            <element signature="e#79#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/NLP_model_training_new.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/debug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="95" selection-start-line="95" selection-end-line="95" selection-end-column="19" />
+          <folding>
+            <element signature="e#17#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/features.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/translate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/train_test_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" selection-end-column="40" />
+          <folding>
+            <element signature="e#17#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/ling.ran/ling.ran.ovpn">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="41" column="23" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/dist/kfasta.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP/NLP_model_training.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../repo/signal_generation/prototype.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="34" column="62" selection-start-line="27" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
